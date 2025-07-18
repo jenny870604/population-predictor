@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import pandas as pd
+import os
 
 app = FastAPI()
 
@@ -9,5 +10,7 @@ def read_root():
 
 @app.get("/forecast")
 def get_forecast():
-    df = pd.read_pickle("2024_人口預測.pkl")
+    base_dir = os.path.dirname(__file__)  # 這時是根目錄
+    pkl_path = os.path.join(base_dir, "2024_人口預測.pkl")
+    df = pd.read_pickle(pkl_path)
     return df.to_dict(orient="records")
