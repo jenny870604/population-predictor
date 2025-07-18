@@ -9,5 +9,5 @@ def read_root():
 
 @app.get("/forecast")
 def get_forecast():
-    df = pd.read_pickle("2024_人口預測.pkl")
+    df = pd.read_pickle("./app/2024_人口預測.pkl")
     return df.to_dict(orient="records")
