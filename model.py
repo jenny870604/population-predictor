@@ -86,7 +86,7 @@ print(results_df)
 
 # 儲存為 CSV
 results_df.to_csv("2024_人口預測.csv", index=False)
-results_df.to_pickle("./app/2024_人口預測.pkl")
+results_df.to_pickle("2024_人口預測.pkl")
 
 # 設定中文字型
 fontManager.addfont("ChineseFont.ttf")
